@@ -13,18 +13,7 @@ export default class About extends Component {
           <div className="nine columns main-col">
             <h2>About Me</h2>
             <p>{resumeData.about}</p>
-            <div className="row">
-              <div className="columns contact-details">
-                <h2>Contact Details</h2>
-                <p className="address">
-                  <span>{resumeData.name}</span><br />
-                  <span>{resumeData.addressLine1}<br />
-                  {resumeData.addressLine2}
-                  </span><br />
-                  <span>{resumeData.phoneNumber}</span><br />
-                  <span>{resumeData.email}</span>
-                </p>
-              </div>
+            
               <div className="columns download">
                 <p>
                   <a href="#" className="button"><i className="fa fa-download" />Download Resume</a>
@@ -32,7 +21,7 @@ export default class About extends Component {
               </div>
             </div> {/* end row */}
           </div> {/* end .main-col */}
-        </div>
+     
       </section> {/* About Section End*/}
       </React.Fragment>
     );

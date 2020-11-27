@@ -1,91 +1,61 @@
-import React, { Component } from 'react';
-export default class Contact extends Component {
-  render() {
-    return (
-      <React.Fragment>
-   <section id="contact">
-        <div className="row section-head">
-          <div className="two columns header-col">
-            <h1><span>Get In Touch.</span></h1>
-          </div>
-          <div className="ten columns">
-            <p className="lead">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
-              eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
-              voluptatem quia voluptas sit aspernatur aut odit aut fugit.
-            </p>
-          </div>
-        </div>
-        <div className="row">
-          <div className="eight columns">
-            {/* form */}
-            <form action method="post" id="contactForm" name="contactForm">
-              <fieldset>
-                <div>
-                  <label htmlFor="contactName">Name <span className="required">*</span></label>
-                  <input type="text" defaultValue size={35} id="contactName" name="contactName" />
-                </div>
-                <div>
-                  <label htmlFor="contactEmail">Email <span className="required">*</span></label>
-                  <input type="text" defaultValue size={35} id="contactEmail" name="contactEmail" />
-                </div>
-                <div>
-                  <label htmlFor="contactSubject">Subject</label>
-                  <input type="text" defaultValue size={35} id="contactSubject" name="contactSubject" />
-                </div>
-                <div>
-                  <label htmlFor="contactMessage">Message <span className="required">*</span></label>
-                  <textarea cols={50} rows={15} id="contactMessage" name="contactMessage" defaultValue={""} />
-                </div>
-                <div>
-                  <button className="submit">Submit</button>
-                  <span id="image-loader">
-                    <img alt="" src="images/loader.gif" />
-                  </span>
-                </div>
-              </fieldset>
-            </form> {/* Form End */}
-            {/* contact-warning */}
-            <div id="message-warning"> Error boy</div>
-            {/* contact-success */}
-            <div id="message-success">
-              <i className="fa fa-check" />Your message was sent, thank you!<br />
-            </div>
-          </div>
-          <aside className="four columns footer-widgets">
-            <div className="widget widget_contact">
-              <h4>Address and Phone</h4>
-              <p className="address">
-                Jonathan Doe<br />
-                1600 Amphitheatre Parkway <br />
-                Mountain View, CA 94043 US<br />
-                <span>(123) 456-7890</span>
-              </p>
-            </div>
-            <div className="widget widget_tweets">
-              <h4 className="widget-title">Latest Tweets</h4>
-              <ul id="twitter">
-                <li>
-                  <span>
-                    This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.
-                    Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum
-                    <a href="#">http://t.co/CGIrdxIlI3</a>
-                  </span>
-                  <b><a href="#">2 Days Ago</a></b>
-                </li>
-                <li>
-                  <span>
-                    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
-                    eaque ipsa quae ab illo inventore veritatis et quasi
-                    <a href="#">http://t.co/CGIrdxIlI3</a>
-                  </span>
-                  <b><a href="#">3 Days Ago</a></b>
-                </li>
-              </ul>
-            </div>
-          </aside>
-        </div>
-      </section> {/* Contact Section End*/}
-      </React.Fragment>
-    );
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
+import Typography from '@material-ui/core/Typography';
+import CardContent from '@material-ui/core/CardContent';
+import { blue } from '@material-ui/core/colors';
+
+
+const useStyles = makeStyles({
+  root: {
+    minWidth: 275,
+  },
+  bullet: {
+    display: 'inline-block',
+    margin: '0 2px',
+    transform: 'scale(0.8)',
+  },
+  title: {
+    fontSize: 40,
+    textAlign: "center"
+  },
+  pos: {
+    marginBottom: 12,
+  },
+  cardContact:{
+    textAlign: "center",
+    fontSize: 20,
+    color: blue
+
   }
+});
+
+export default function Contact() {
+  const classes = useStyles();
+
+
+  return (
+    <div className= "cardContact">
+
+  
+    <Card className={classes.root} variant="outlined">
+      <CardContent>
+      <Typography className={classes.title} color="textSecondary" gutterBottom>
+          Contact Details
+        </Typography>
+        <Typography className={classes.cardContact}>
+          <p>
+            47, 1197 Boylston Street<br>
+            </br>
+           Boston, Massachusetts, 02215<br></br>
+           (857)-8695459<br>
+            </br>
+            jaiswal.de@northeastern.edu
+          </p>
+        </Typography>
+      </CardContent>
+   
+    </Card>
+    </div>
+  );
 }
